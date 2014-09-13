@@ -25,7 +25,8 @@ function FormCtrl($scope, $location, $http) {
     $scope.left = { name: 'left.html', url: '/common/partials/left.html'};
     
     $scope.menu_items = [
-    {"url":"#/table", "name":"Dashboard","icon":"dashboard"},
+    {"url":"#/dashboard", "name":"Dashboard","icon":"dashboard"},
+     {"url":"#/table", "name":"Table","icon":"table"},    
      {"url":"#/form", "name":"Form","icon":"bar-chart-o"},    
     ];
 

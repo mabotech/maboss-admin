@@ -18,6 +18,7 @@
     "font-awesome": "*",
     "angular-ui-utils": "*",
     "angular-bootstrap": "*",
+    "angular-datatables":"*",
     "angular-ui-router": "*",
     "angular-ui-select2": "*",
     "angular-ui-sortable": "*",

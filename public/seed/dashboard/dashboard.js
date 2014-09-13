@@ -1,15 +1,15 @@
 'use strict';
 
-angular.module('maboApp.table', ['ngRoute','datatables'])
+angular.module('maboApp.dashboard', ['ngRoute'])
 
 .config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/table', {
-    templateUrl: 'table/table.html',
-    controller: 'TableCtrl'
+  $routeProvider.when('/dashboard', {
+    templateUrl: 'dashboard/dashboard.html',
+    controller: 'DashboardCtrl'
   });
 }])
 
-.controller('TableCtrl', ['$scope', function($scope) {
+.controller('DashboardCtrl', ['$scope', function($scope) {
     
     $scope.header = { name: 'header.html', url: '/common/partials/header.html'};
     
@@ -17,8 +17,8 @@ angular.module('maboApp.table', ['ngRoute','datatables'])
     
     $scope.menu_items = [
     {"url":"#/dashboard", "name":"仪表板","icon":"dashboard"},
-     {"url":"#/table", "name":"Table","icon":"table"},    
-     {"url":"#/form", "name":"Form","icon":"bar-chart-o"},    
+    {"url":"#/table", "name":"Table","icon":"table"},    
+    {"url":"#/form", "name":"Form","icon":"bar-chart-o"},    
     ];
 
 }]);
