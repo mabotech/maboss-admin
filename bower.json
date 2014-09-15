@@ -25,6 +25,7 @@
     "angular-schema-form":"*",
     "angular-schema-form-datepicker":"*",
     "angular-schema-form-colorpicker":"*",
+    "angular-nvd3":"*",
     "bootstrap-vertical-tabs":"*",
     "html5-boilerplate":"*",
     "modernizr":"*",
