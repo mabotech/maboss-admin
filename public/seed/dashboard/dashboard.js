@@ -43,7 +43,7 @@ angular.module('maboApp.dashboard', ['ngRoute', 'nvd3'])
                 xAxis: {
                     showMaxMin: false,
                     tickFormat: function(d) {
-                        return d3.time.format('%x')(new Date(d))
+                        return d3.time.format('%m-%d %H:%M')(new Date(d))
                     }
                 },
                 yAxis: {
@@ -54,7 +54,7 @@ angular.module('maboApp.dashboard', ['ngRoute', 'nvd3'])
             }
         };
 
-        $http.get('dashboard/data.json').then(function(res) {
+        $http.get('dashboard/data1.json').then(function(res) {
         
             $scope.data = res.data.measure;
     
