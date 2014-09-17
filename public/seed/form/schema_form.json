@@ -3,69 +3,36 @@
         "type": "object",
         "title": "Comment",
         "properties": {
-            "name": {
-                "title": "Name",
+            "taskName": {
+                "title": "试验任务书名称",
                 "type": "string"
             },
-            "title": {
-                "type": "string",
-                "enum": []
+            "taskNo": {
+                "title": "试验任务书编号",
+                "type": "string"
               },
-            "color": {
-                "title": "颜色",
-                "type": "string",
-                "format": "color"
+            "sampleNo": {
+                "title": "样品编号",
+                "type": "string"
             },
-            "date": {
-                "title": "Date",
-                "type": "string",
-                "format": "date"
-
-            },
-            "email": {
-                "title": "Email",
-                "type": "string",
-                "default": "abc@123.com",
-                "pattern": "^\\S+@\\S+$",
-                "description": "Email will be used for evil."
+            "equipment": {
+                "title": "设备名称",
+                "type": "string"
             },
             "comment": {
-                "title": "Comment[readonly]",
+                "title": "备注",
                 "type": "string",
-                "readonly": true,
-                "default": "abc123",
-                "maxLength": 20,
+                "maxLength": 200,
                 "validationMessage": "Don't be greedy!"
             }
-        },
-        "required": ["name", "email", "comment"]
+        }
+        
     },
     "form": [
-        "name",
-        {"key":"title"
-         
-            
-            },
-        {
-            "key": "date",
-            "minDate": "2014-01-01"
-
-
-        }, {
-            "key": "email",
-            "type": "string"
-        }, {
-            "key": "comment",
-            "type": "color"
-        }, 
-
-        {
-            "key": "color",
-            "colorFormat": "hex"
-        },{
-            "type": "submit",
-            "style": "btn-info",
-            "title": "OK"
-        }
+        "taskName",
+        "taskNo",
+        "sampleNo",
+        "equipment",
+        {"key":"comment","type":"textarea"}
     ]
 }
