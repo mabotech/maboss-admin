@@ -4,7 +4,8 @@
 angular.module('maboApp', [
   'ngRoute',
   'maboApp.dashboard',
+   'maboApp.flot',
 ]).
 config(['$routeProvider', function($routeProvider) {
-  $routeProvider.otherwise({redirectTo: '/dashboard'});
+  $routeProvider.otherwise({redirectTo: '/flot'});
 }]);

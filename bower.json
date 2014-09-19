@@ -28,6 +28,7 @@
     "angular-schema-form-colorpicker":"*",
     "angular-nvd3":"*",
     "bootstrap-vertical-tabs":"*",
+    "flot":"*",
     "fullcalendar":"*",
     "html5-boilerplate":"*",
     "modernizr":"*",
