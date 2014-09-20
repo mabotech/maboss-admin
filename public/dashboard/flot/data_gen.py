@@ -20,7 +20,7 @@ def main():
 
     """
 
-    dt = time.strptime("2014-09-16 15:00:00","%Y-%m-%d %H:%M:%S")
+    dt = time.strptime("2014-09-19 15:00:00","%Y-%m-%d %H:%M:%S")
 
     #t2 = time.strptime("2014-09-15 08:00:00","%Y-%m-%d %H:%M:%S")
 
@@ -60,7 +60,7 @@ def main():
 
     s = json.dumps(d)
 
-    with open("data1.json","w") as fh:
+    with open("data3.json","w") as fh:
         
         fh.write(s)
     
