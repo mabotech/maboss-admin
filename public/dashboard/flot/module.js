@@ -17,7 +17,7 @@ angular.module('maboApp.flot', ['ngRoute', 'angular-flot'])
     
     $scope.menu_items = [
     {"url":"#/flot", "name":"仪表板","icon":"flot"},
-    {"url":"#/table", "name":"Table","icon":"table"},    
+    {"url":"#/dashboard", "name":"Table","icon":"table"},    
     {"url":"#/form", "name":"Form","icon":"bar-chart-o"},    
     ];
     
@@ -36,19 +36,29 @@ angular.module('maboApp.flot', ['ngRoute', 'angular-flot'])
             
     var dv = {
         series: {
-            stack: 1,
+           // stack: 1,
+            stackpercent:true,
        // bars: { show: true, barWidth:600 *60*60},
         lines: { show: true , fill: true},
-        points: { show: true }
+        points: { show: false }
         },
-        selection: {
+        	crosshair: {
+				mode: "x"
+			},
+       /* selection: {
 				mode: "xy"
 			},
+            */
         xaxis:{
             mode:"time",
              timeformat: "%m-%d %H:%M",
-            min: (new Date(2014, 8, 19)).getTime(),
+         //   min: (new Date(2014, 8, 19)).getTime(),
            // max: (new Date(2014, 8, 21)).getTime(),
+        },
+                yaxis:{
+         
+            min:0,
+            max: 100
         },
         zoom: {
 				interactive: true
@@ -82,10 +92,15 @@ angular.module('maboApp.flot', ['ngRoute', 'angular-flot'])
     $http.get('flot/data3.json').then(function(res) {
         
        
-         $scope.dataset = [{ data: [], yaxis: 1, label: "sin(x)" },{ data: [], yaxis: 1,label: "cos(x)" }];
+         $scope.dataset = [{ data: [], yaxis: 1, label: "sin(x)" },
+         { data: [], yaxis: 1,label: "cos(x)" },
+         { data: [], yaxis: 1,label: "f(x)" },
+         
+         ];
          
          $scope.dataset[0].data  = res.data.measure[0]["values"];
          $scope.dataset[1].data  = res.data.measure[1]["values"];
+         $scope.dataset[2].data  = res.data.measure[2]["values"];
         
         //$scope.dataset
      //   console.log($scope.dataset);

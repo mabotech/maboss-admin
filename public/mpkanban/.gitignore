@@ -1,0 +1,13 @@
+*.iml
+*.ipr
+*.iws
+build/
+.gradle/
+stories_*
+.DS_Store
+*/.*
+node_modules/
+app/bower_modules/
+.tmp/
+dist/
+bower_components/
