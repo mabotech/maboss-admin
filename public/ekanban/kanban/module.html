@@ -1,0 +1,39 @@
+ 
+<header class="header">
+  <div ng-include src="header.url"></div>
+</header>
+
+ 
+<div id="main" class="container-fluid">
+	<div class="row">
+       <div class="col-xs-12 col-sm-12">
+       
+       <h2>ui.sortable connected lists</h2>
+
+  <div class="floatleft">
+    <div ui-sortable="sortableOptions" class="apps-container screen floatleft" ng-model="list1">
+      <div class="app" ng-repeat="app in list1">{{$index}} {{app.title}}</div>
+    </div>
+    <div ui-sortable="sortableOptions" class="apps-container screen floatleft" ng-model="list2">
+      <div class="app" ng-repeat="app in list2">
+      <a href="#">link</a>
+      {{$index}} {{app.title}}</div>
+    </div>
+    <div style="clear: both;"></div>
+</div>
+
+  <div class="floatright">
+    <button type="button" ng-click="logModels()">Log Models</button>
+    <ul class="list logList">
+      <li ng-repeat="entry in sortingLog" class="logItem">
+        {{entry}}
+      </li>
+    </ul>
+  </div>
+  
+  <div class="clear"></div>
+
+       
+       </div>
+    </div>
+</div>

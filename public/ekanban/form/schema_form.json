@@ -1,0 +1,38 @@
+{
+    "schema": {
+        "type": "object",
+        "title": "Comment",
+        "properties": {
+            "taskName": {
+                "title": "试验任务书名称",
+                "type": "string"
+            },
+            "taskNo": {
+                "title": "试验任务书编号",
+                "type": "string"
+              },
+            "sampleNo": {
+                "title": "样品编号",
+                "type": "string"
+            },
+            "equipment": {
+                "title": "设备名称",
+                "type": "string"
+            },
+            "comment": {
+                "title": "备注",
+                "type": "string",
+                "maxLength": 200,
+                "validationMessage": "Don't be greedy!"
+            }
+        }
+        
+    },
+    "form": [
+        "taskName",
+        "taskNo",
+        "sampleNo",
+        "equipment",
+        {"key":"comment","type":"textarea"}
+    ]
+}

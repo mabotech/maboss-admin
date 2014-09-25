@@ -1,0 +1,125 @@
+ 
+<header class="header">
+  <div ng-include src="header.url"></div>
+</header>
+
+ 
+<div id="main" class="container-fluid">
+	<div class="row">
+		<div id="sidebar-left" class="col-xs-2 col-sm-2">
+            <div  ng-include src="left.url"></div>
+        </div>
+		<div class="col-xs-12 col-sm-10">
+            Table
+           <table datatable="" class="row-border hover">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>First name</th>
+        <th>Last name</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>1</td>
+        <td>Foo</td>
+        <td>Bar</td>
+    </tr>
+    <tr>
+        <td>123</td>
+        <td>Someone</td>
+        <td>Youknow</td>
+    </tr>
+    <tr>
+        <td>987</td>
+        <td>Iamout</td>
+        <td>Ofinspiration</td>
+    </tr>
+    </tbody>
+</table>
+
+<form class="form-horizontal" role="form" name="form">
+ <div class="form-group">
+ <label class="col-md-3 control-label" for="id_start">当前状态:</label>
+ <button type="button" class="btn btn-success btn-lg">
+<span class="fa fa-cog"></span> 运行
+</button>
+</div>
+ <div class="form-group">
+ <label class="col-md-3 control-label" for="id_start">转换状态:</label>
+
+<button type="button" class="btn btn-default btn-lg">
+  <span class="fa fa-ban"></span> 故障
+</button>
+<button type="button" class="btn btn-default btn-lg">
+  <span class="fa fa-wrench"></span> 维护
+</button>
+<button type="button" class="btn btn-default btn-lg">
+  <span class="fa fa-power-off"></span> 停用
+</button>
+</div>
+<div class="form-group">
+ <label class="col-md-3 control-label" for="id_start">开始时间:</label>
+<div class="col-sm-2">
+<input type="time"  class="form-control" />
+</div>
+</div>
+ <div class="form-group">
+<label class="col-md-3 control-label" for="id_stop">结束时间:</label>
+<div class="col-sm-2">
+<input type="time"  class="form-control" readonly="readonly" />
+</div>
+</div>
+</form>
+
+<br/><br/><br/>
+
+<form class="form-horizontal" role="form" name="form">
+ <div class="form-group">
+ <label class="col-md-3 control-label" for="id_start">当前状态:</label>
+ <button type="button" class="btn btn-success btn-lg">
+  <span class="fa fa-cog"></span> 运行
+</button>
+</div>
+ <div class="form-group">
+ <label class="col-md-3 control-label" for="id_start">转换状态:</label>
+
+
+<button type="button" class="btn btn-default btn-lg">
+  <span class="fa fa-car"></span> 占位
+</button>
+</div>
+ <div class="form-group">
+ <label class="col-md-3 control-label" for="id_start">试验属性:</label>
+<select>
+<option>选择试验属性</option>
+<option>车辆准备</option>
+<option>车辆故障</option>
+<option>车辆维修</option>
+</select>
+</div>
+ <div class="form-group">
+ <label class="col-md-3 control-label" for="id_start">开始时间:</label>
+<div class="col-sm-2">
+<input type="time"  class="form-control" />
+</div>
+</div>
+ <div class="form-group">
+<label class="col-md-3 control-label" for="id_stop">结束时间:</label>
+<div class="col-sm-2">
+<input type="time"  class="form-control" readonly="readonly" />
+</div>
+</div>
+</form>
+
+
+		</div><!-- col -- >
+    </div><!-- row  -- >
+    
+    
+    
+
+    
+    
+</div><!-- main -- >
+
