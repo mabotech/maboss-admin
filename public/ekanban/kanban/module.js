@@ -92,7 +92,14 @@ angular.module('maboApp.kanban', ['ngRoute', 'ui.sortable'])
   
   $scope.sortableOptions = {
     placeholder: "card",
-    connectWith: ".apps-container"
+    connectWith: ".cards" ,// connectWith: '#kanban ul.cards'
+      
+       beforeStop: function() {
+          console.log("list " +  ": beforeStop");
+      },
+      change: function() {
+          console.log("list "  + ": change");
+      },
   };
   
   $scope.v = {"kanbans":{"设备名称":{"name":"设备名称","numberOfColumns":"6","columns":[{"name":"待排产","cards":[{"name":"r1","details":"eee","color":"FAFCD2"},{"name":"hh","details":"eeee","color":"FCC19D"},{"name":"yyy","details":"yyrr","color":"A2FCA3"}],"settings":{"color":"#CCC"}},{"name":"排产","cards":[],"settings":{"color":"hsv(0, 65%, 41%)"}},{"name":"准备","cards":[],"settings":{"color":"hsv(0, 33%, 88%)"}},{"name":"实验","cards":[],"settings":{"color":""}},{"name":"完成","cards":[],"settings":{"color":""}},{"name":"阻塞","cards":[],"settings":{"color":"hsv(0, 86%, 93%)"}}],"archived":[],"settings":{}}},"lastUsed":"设备名称","theme":"default-dark","lastUpdated":0};    
