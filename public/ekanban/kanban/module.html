@@ -1,39 +1,41 @@
  
 <header class="header">
   <div ng-include src="header.url"></div>
-</header>
-
- 
-<div id="main" class="container-fluid">
-	<div class="row">
-       <div class="col-xs-12 col-sm-12">
-       
-       <h2>ui.sortable connected lists</h2>
-
-  <div class="floatleft">
+</header> 
+<div id="main" class="container-fluid"> 
+        <div id="columns" class="row">
+            <div class="col-md-{{12/kanban.numberOfColumns}}" ng-repeat="column in kanban.columns" data-columnindex="{{$index}}" id="column{{$index}}" >
+                <div class="column" style="background-color: {{column.settings.color}}">
+                  <div class="columnHeader">
+                     <a title="Column settings" ng-click="columnSettings(kanban, column)" ng-model="column" ng-hide="editing"><i class="glyphicon glyphicon-wrench"></i></a>
+                      <a title="Add card to column" class="pull-right" ng-click="addNewCard(column)"><i class="glyphicon glyphicon-plus"></i></a>
+                      <span>{{column.name}} ({{column.cards.length}})</span>
+                  </div>
+                  <ul class="cards apps-container screen floatleft" ui-sortable="sortableOptions" sortable ng-model="column.cards" style="min-height:{{columnHeight}}px;max-height:{{columnHeight}}px;">
+                      <li class="card" ng-repeat="card in column.cards" style="background-color: #{{card.color}};">
+                          <a class="pull-right" ng-click="delete(card, column)"><i class="glyphicon glyphicon-remove"></i></a>
+                          <a class="pull-right" title="Archive" ng-click="archive(kanban, column, card)" ng-show="isLastColumn(column.name, kanban)"><i class="glyphicon glyphicon-folder-close"></i></a>
+                          <a ng-click="openCardDetails(card)"><span tooltip-popup-delay='2000' tooltip='{{details(card)}}'>{{card.name}}</span></a>
+                          <div>desc</div>
+                          <div>card info</div>
+                          <div>card info</div>
+                      </li>
+                  </ul>
+              </div>
+            </div>
+        </div>    
+</div>
+{connectWith: '#kanban ul.cards'}
+<div id="main" class="container-fluid"> 
+        <div id="columns" class="row">
+ <div class="floatleft">
     <div ui-sortable="sortableOptions" class="apps-container screen floatleft" ng-model="list1">
       <div class="app" ng-repeat="app in list1">{{$index}} {{app.title}}</div>
     </div>
     <div ui-sortable="sortableOptions" class="apps-container screen floatleft" ng-model="list2">
-      <div class="app" ng-repeat="app in list2">
-      <a href="#">link</a>
-      {{$index}} {{app.title}}</div>
+      <div class="app" ng-repeat="app in list2">{{$index}} {{app.title}}</div>
     </div>
     <div style="clear: both;"></div>
 </div>
-
-  <div class="floatright">
-    <button type="button" ng-click="logModels()">Log Models</button>
-    <ul class="list logList">
-      <li ng-repeat="entry in sortingLog" class="logItem">
-        {{entry}}
-      </li>
-    </ul>
-  </div>
-  
-  <div class="clear"></div>
-
-       
-       </div>
-    </div>
+        </div>    
 </div>
